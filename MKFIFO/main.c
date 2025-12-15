@@ -20,6 +20,9 @@ int main(int argc, char *argv[]){
 		
 		close(fd_read);
 		close(fd_write);
+
+		unlink(WORK2SERV);
+		unlink(SERV2WORK);
 	}
 	else if(strcmp(argv[1], "worker")==0){
 		printf("W: Wainting\n");
