@@ -6,7 +6,7 @@ int main(int argc, char *argv[]){
 	mkfifo(WORK2SERV, 0666);
 	
 	if(argc != 2){
-		printf("Wrong amount of arguments");
+		printf("Wrong amount of arguments\n");
 		return 1;
 	}
 	
@@ -15,14 +15,14 @@ int main(int argc, char *argv[]){
 		int fd_write = open(SERV2WORK, O_WRONLY); 
 		int fd_read = open(WORK2SERV, O_RDONLY);
 		
-		printf("S: Connected \n");
+		printf("S: Connected\n");
 		server(fd_read, fd_write);
 		
 		close(fd_read);
 		close(fd_write);
 	}
 	else if(strcmp(argv[1], "worker")==0){
-		printf("W: Wainting \n");
+		printf("W: Wainting\n");
 		int fd_read = open(SERV2WORK, O_RDONLY);
 		int fd_write = open(WORK2SERV, O_WRONLY);
 		
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
 		close(fd_write);	
 	}
 	else{
-		printf("WRONG ARGUMENT NAME");
+		printf("WRONG ARGUMENT NAME\n");
 		return 1;
 	}
     return 0;
