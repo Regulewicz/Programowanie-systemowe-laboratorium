@@ -5,7 +5,7 @@ void worker(int fd_read, int fd_write){
 	while(1){
 		read(fd_read, string, BUFFER_SIZE);
 		if (strcmp(string, "EXIT")==0){
-			printf("Program terminated");
+			printf("Program terminated\n");
 			break;
 		}
 		string[0] = 'X';
