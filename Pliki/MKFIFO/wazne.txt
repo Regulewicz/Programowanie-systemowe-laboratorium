@@ -1,0 +1,1 @@
+Bezpośrednie odpalenie przez Make`a moze zakończyć sie niepowodzeniem w związku z ścieżkami named pipe`ów podanych w pliku nagłowkowym common.h
